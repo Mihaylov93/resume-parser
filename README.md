@@ -6,7 +6,7 @@ This library parse through CVs / Resumes in the word (.doc or .docx) / RTF / TXT
 
 ## Installation
 
-`npm install resume-parser --save`
+`npm install /path_to_folder/resume-parser/ -g`
 
 ## Usage
 
