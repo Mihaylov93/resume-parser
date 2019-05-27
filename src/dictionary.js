@@ -9,7 +9,9 @@ module.exports = {
     technology: ['technology', 'technologies'],
     experience: ['experience'],
     education: ['education'],
-    skills: ['skills', 'Skills & Expertise', 'technology', 'technologies'],
+    skills: [
+		'skills and interests', 'Skills & Expertise', 'skills', 'technology', 'technologies'
+	],
     languages: ['languages'],
     courses: ['courses'],
     projects: ['projects'],
@@ -154,14 +156,17 @@ module.exports = {
     skype: 'skype',
   },
   regular: {
-    name: [/([A-Z][a-z]*)(\s[A-Z][a-z]*)/],
-    email: [/([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})/],
-    phone: [/((?:\+?\d{1,3}[\s-])?\(?\d{2,3}\)?[\s.-]?\d{3}[\s.-]\d{4,5})/],
+    name: [/Curriculum[\s*|\t+]Vitae[\s*|\t+]([A-Z][a-z]*\s[A-Z][a-z]*)|([A-Z][a-z]*\s[A-Z][a-z]*)/],
+    email: [/([a-z0-9_\.-]+@[\da-z\.-]+\.[a-z\.]{2,6})/],
+    phone: [/(^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$)/],
   },
 };
 
 // helper method
 function download(url, callback) {
+  url.replace('http://','')
+  url.replace('https://','')
+  url = 'http://'.concat(url)
   request(url, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       callback(body);

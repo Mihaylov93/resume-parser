@@ -157,7 +157,7 @@ function parseDictionaryRegular(data, Resume) {
     _.forEach(expressions, function(expression) {
       find = new RegExp(expression).exec(data);
       if (find) {
-        Resume.addKey(key.toLowerCase(), find[0]);
+        Resume.addKey(key.toLowerCase(), find[1]);
       }
     });
   });
